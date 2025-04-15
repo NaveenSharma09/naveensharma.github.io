@@ -46,18 +46,22 @@ img {
 /* Hero section */
 .hero {
   background: url('images/dashboard-bg.jpg') center center/cover no-repeat;
-  color: #fff;
   text-align: center;
   padding: 6rem 2rem;
 }
-.hero-content h1 {
-  font-size: 2.8rem;
-  margin-bottom: 0.5rem;
+
+/* Hero section text color in light mode */
+.hero h1, .hero p {
+  color: #111; /* Set text color to dark in light mode */
 }
-.hero-content p {
-  font-size: 1.2rem;
-  max-width: 600px;
-  margin: auto;
+
+/* Dark mode adjustments */
+body.dark .hero {
+  color: #fff; /* Keep text white in dark mode */
+}
+
+body.dark .hero h1, body.dark .hero p {
+  color: #fff; /* Ensure the text stays white in dark mode */
 }
 
 /* Projects */
@@ -137,6 +141,8 @@ body.dark .btn {
 body.dark .btn:hover {
   background-color: #ccc;
 }
+
+/* Project Card Images */
 .project-card img {
   width: 100px;
   height: auto;
