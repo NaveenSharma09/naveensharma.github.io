@@ -137,3 +137,10 @@ body.dark .btn {
 body.dark .btn:hover {
   background-color: #ccc;
 }
+.project-card img {
+  width: 100px;
+  height: auto;
+  object-fit: contain;
+  border-radius: 0; /* Optional: removes rounded corners from logos */
+  margin-bottom: 1rem;
+}
