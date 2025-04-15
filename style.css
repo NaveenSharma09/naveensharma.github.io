@@ -64,6 +64,11 @@ body.dark .hero h1, body.dark .hero p {
   color: #fff; /* Ensure the text stays white in dark mode */
 }
 
+/* Header text color adjustments */
+body .header, .hero h1, .hero p {
+  color: #111; /* Dark text for light mode */
+}
+
 /* Projects */
 .projects {
   padding: 4rem 2rem;
