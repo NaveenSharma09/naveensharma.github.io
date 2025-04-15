@@ -1,99 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Naveen Sharma | Data Analyst Portfolio</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f9f9f9; /* Light gray background */
-            color: #333; /* Dark text for readability */
-        }
-        header {
-            background-color: #2C3E50; /* Dark blue for header */
-            padding: 20px;
-            text-align: center;
-            color: white;
-        }
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        .header-content a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        section {
-            margin: 20px auto;
-            padding: 20px;
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            max-width: 1200px;
-        }
-        h1, h2 {
-            color: #2C3E50; /* Dark blue color for headers */
-        }
-        ul {
-            list-style: none;
-            padding: 0;
-        }
-        li {
-            padding: 8px;
-            border-bottom: 1px solid #ddd;
-        }
-        li a {
-            color: #2980B9; /* Soft blue for links */
-            text-decoration: none;
-        }
-        li a:hover {
-            text-decoration: underline;
-        }
-        .header-content div {
-            display: flex;
-            gap: 15px;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Naveen Sharma | Data Analyst</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
 </head>
 <body>
+  <header class="header">
+    <div class="logo">Naveen Sharma</div>
+    <nav class="nav">
+      <a href="#">Home</a>
+      <a href="#projects">Projects</a>
+      <a href="#certifications">Licenses & Certifications</a>
+      <a href="#contact">Contact</a>
+      <button id="dark-toggle" aria-label="Toggle Dark Mode">🌙</button>
+    </nav>
+  </header>
 
-<header>
-    <div class="header-content">
-        <div>
-            <h1>Naveen Sharma | Data Analyst</h1>
-        </div>
-        <div>
-            <a href="mailto:nsharma41422@gmail.com">Email Me</a> |
-            <a href="https://www.linkedin.com/in/naveensharma09" target="_blank">LinkedIn</a> |
-            <a href="https://naveensharma.github.io/Naveen_Sharma_Resume.pdf" target="_blank">Resume</a>
-        </div>
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Hi, I'm Naveen Sharma</h1>
+      <p>A Data Analyst turning complex data into actionable insights</p>
     </div>
-</header>
+  </section>
 
-<section>
-    <h2>About Me</h2>
-    <p>I'm a Data Analyst passionate about data visualization, analysis, and finding insights from complex data sets. I have a background in computer science, with hands-on experience in data manipulation, analysis, and visualization using various tools and technologies.</p>
-</section>
+  <section id="projects" class="projects">
+    <h2>Example Projects</h2>
+    <div class="project-grid">
+      <div class="project-card">
+        <img src="images/dashboard1.png" alt="Sales Dashboard"/>
+        <h3>Sales Data Dashboard</h3>
+        <p>Sales oflra Dashboard</p>
+      </div>
+      <div class="project-card">
+        <img src="images/dashboard2.png" alt="Customer Segmentation"/>
+        <h3>Customer Segmentation</h3>
+        <p>Customer Segmentation</p>
+      </div>
+      <div class="project-card">
+        <img src="images/dashboard3.png" alt="Financial Forecasting"/>
+        <h3>Financial Forecasting</h3>
+        <p>Financial Forcaasting</p>
+      </div>
+    </div>
+    <a href="projects.html" class="btn">View More Projects</a>
+  </section>
 
-<section>
-    <h2>Licenses & Certifications</h2>
-    <ul>
-        <li><strong>Excel Basics for Data Analysis</strong> - <a href="https://www.ibm.com/certify" target="_blank">IBM</a> - Issued Feb 2025</li>
-        <li><strong>Explore Core Data Concepts in Microsoft Azure</strong> - <a href="https://www.microsoft.com/en-us/learning" target="_blank">Microsoft</a> - Issued Feb 2025</li>
-        <li><strong>Food Handler</strong> - <a href="https://www.foodsafetytraining.com" target="_blank">Food Safety Training</a> - Issued Feb 2025</li>
-        <li><strong>Overview of Data Visualization</strong> - <a href="https://www.coursera.org" target="_blank">Coursera Project Network</a> - Issued Feb 2025</li>
-        <li><strong>Intermediate Relational Database and SQL</strong> - <a href="https://www.coursera.org" target="_blank">Coursera Project Network</a> - Issued Jun 2024</li>
-        <li><strong>Internship Preparation - Certificate Workshop</strong> - <a href="https://www.cloudcounselage.com" target="_blank">Cloud Counselage Pvt. Ltd.</a> - Issued Jun 2024</li>
-        <li><strong>Introduction to Relational Database and SQL</strong> - <a href="https://www.coursera.org" target="_blank">Coursera Project Network</a> - Issued Jun 2024</li>
-    </ul>
-</section>
-
+  <footer class="footer" id="contact">
+    <h3>Contact</h3>
+    <p>Email: <a href="mailto:naveen.sharma@example.com">naveen.sharma@example.com</a></p>
+    <p>LinkedIn: <a href="https://linkedin.com/in/naveen--sharma" target="_blank">linkedin.com/in/naveen--sharma</a></p>
+  </footer>
 </body>
 </html>
