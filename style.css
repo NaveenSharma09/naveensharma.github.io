@@ -155,3 +155,25 @@ body.dark .btn:hover {
   border-radius: 0; /* Optional: removes rounded corners from logos */
   margin-bottom: 1rem;
 }
+.social-icons {
+  margin-top: 2rem;
+}
+
+.social-icons a {
+  margin: 0 1rem;
+  color: #111;
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #0077b5; /* LinkedIn Blue or any accent */
+}
+
+/* Dark mode */
+body.dark .social-icons a {
+  color: #eee;
+}
+body.dark .social-icons a:hover {
+  color: #1da1f2;
+}
