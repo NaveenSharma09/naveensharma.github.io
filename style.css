@@ -1,194 +1,177 @@
-/* Reset & Base Styles */
+/* Reset + base styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #fff;
-  color: #333;
+  font-family: 'Segoe UI', sans-serif;
   line-height: 1.6;
-  transition: background-color 0.3s, color 0.3s;
+  background-color: #ffffff;
+  color: #222;
+  transition: background 0.3s, color 0.3s;
 }
-
-.dark {
-  background-color: #121212;
-  color: #eaeaea;
-}
-
 a {
-  color: inherit;
   text-decoration: none;
+  color: inherit;
 }
-
 img {
-  max-width: 100%;
-  display: block;
+  width: 100%;
+  border-radius: 8px;
 }
 
 /* Header */
 .header {
-  background-color: #000;
+  background-color: #111;
   color: #fff;
+  padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
-  position: sticky;
-  top: 0;
-  z-index: 100;
 }
-
-.logo {
-  font-family: 'Pacifico', cursive;
-  font-size: 1.8rem;
-}
-
 .nav a {
-  margin: 0 1rem;
+  margin-left: 1.5rem;
+  color: #fff;
   font-weight: 500;
 }
-
 #dark-toggle {
   margin-left: 1rem;
-  padding: 0.3rem 0.6rem;
-  border: none;
-  border-radius: 4px;
-  background-color: #f5f5f5;
   cursor: pointer;
-  transition: background-color 0.2s;
-}
-
-.dark #dark-toggle {
-  background-color: #333;
+  background: none;
+  border: none;
+  font-size: 1.2rem;
   color: #fff;
 }
 
-/* Hero Section */
+/* Hero section */
 .hero {
-  background: url('images/hero-bg.jpg') no-repeat center center/cover;
-  padding: 5rem 2rem;
+  background: url('images/dashboard-bg.jpg') center center/cover no-repeat;
+  color: #fff;
   text-align: center;
+  padding: 6rem 2rem;
 }
-
 .hero-content h1 {
-  font-size: 3rem;
-  margin-bottom: 1rem;
+  font-size: 2.8rem;
+  margin-bottom: 0.5rem;
+}
+.hero-content p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: auto;
 }
 
-.hero-content .tagline {
-  font-size: 1.3rem;
-  max-width: 700px;
-  margin: 0 auto;
-}
-
-/* Projects & Certifications */
-section.projects {
+/* Projects */
+.projects {
   padding: 4rem 2rem;
   background-color: #f9f9f9;
-}
-
-.dark section.projects {
-  background-color: #1e1e1e;
-}
-
-section.projects h2 {
   text-align: center;
-  margin-bottom: 2rem;
+}
+.projects h2 {
   font-size: 2rem;
+  margin-bottom: 2rem;
 }
-
-/* Grid Layout */
 .project-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
+  display: flex;
+  flex-wrap: wrap;
   justify-content: center;
+  gap: 2rem;
 }
-
 .project-card {
   background: #fff;
-  padding: 1rem;
   border-radius: 12px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  text-align: center;
-  transition: transform 0.3s;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  max-width: 300px;
+  padding: 1rem;
 }
-
-.dark .project-card {
-  background: #2b2b2b;
-}
-
-.project-card img {
-  width: 100px;
-  margin-bottom: 1rem;
-}
-
 .project-card h3 {
-  font-size: 1.2rem;
-  margin: 0.5rem 0;
+  margin-top: 1rem;
+}
+.btn {
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #111;
+  color: #fff;
+  border-radius: 8px;
+  transition: background 0.3s;
+}
+.btn:hover {
+  background-color: #333;
 }
 
-.project-card p {
-  font-size: 0.95rem;
+/* Certifications */
+.certifications {
+  padding: 4rem 2rem;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+.certifications h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+.certification-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+.certification-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  max-width: 300px;
+  padding: 1rem;
+}
+.certification-card img {
+  max-width: 100px;
   margin-bottom: 1rem;
 }
-
-.project-card .btn {
-  display: inline-block;
-  background: #007bff;
-  color: #fff;
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
-  transition: background 0.2s;
+.certification-card h3 {
+  margin-top: 1rem;
 }
-
-.project-card .btn:hover {
-  background: #0056b3;
+.certification-card p {
+  font-size: 1rem;
+  color: #555;
 }
-
-/* Certifications (same style as projects for consistency) */
-#certifications {
-  padding-top: 4rem;
-}
-
-#certifications .project-grid .project-card img {
-  height: 60px;
-  width: auto;
-  margin: 0 auto 1rem;
+.certification-card .btn {
+  margin-top: 1rem;
 }
 
 /* Footer */
 .footer {
-  background-color: #000;
-  color: #fff;
+  background: #fff;
   text-align: center;
-  padding: 2rem 1rem;
-  margin-top: 2rem;
+  padding: 2rem;
+  border-top: 1px solid #ccc;
+}
+.footer h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
 }
 
-.social-icons a {
-  margin: 0 0.5rem;
-  font-size: 1.3rem;
-  color: #fff;
+/* Dark Mode */
+body.dark {
+  background-color: #111;
+  color: #eee;
 }
-
-.social-icons a:hover {
-  color: #007bff;
+body.dark .header {
+  background-color: #000;
 }
-
-/* Responsive */
-@media (max-width: 768px) {
-  .nav {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    text-align: center;
-  }
-
-  .hero-content h1 {
-    font-size: 2.2rem;
-  }
+body.dark .projects {
+  background-color: #222;
+}
+body.dark .project-card {
+  background-color: #333;
+  color: #eee;
+}
+body.dark .footer {
+  background-color: #111;
+  border-top-color: #444;
+}
+body.dark .btn {
+  background-color: #eee;
+  color: #111;
+}
+body.dark .btn:hover {
+  background-color: #ccc;
 }
