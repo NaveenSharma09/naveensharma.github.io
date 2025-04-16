@@ -1,209 +1,105 @@
-/* Reset and Base */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
+/* General Styles */
 body {
   font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
   background-color: #fff;
-  color: #333;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: background-color 0.3s ease;
 }
 
 body.dark {
-  background-color: #121212;
-  color: #f5f5f5;
+  background-color: #333;
+  color: #f0f0f0;
 }
 
 /* Header */
 header {
-  position: sticky;
+  position: fixed;
   top: 0;
+  width: 100%;
+  background-color: #fff;
+  padding: 10px 20px;
   z-index: 1000;
-  background-color: white;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   transition: background-color 0.3s ease;
 }
 
-body.dark header {
-  background-color: #1e1e1e;
-}
-
 header.scrolled {
-  background-color: #f4f4f4;
-}
-
-body.dark header.scrolled {
-  background-color: #2a2a2a;
-}
-
-header .logo {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #000;
-}
-
-body.dark header .logo {
-  color: #f5f5f5;
-}
-
-nav {
-  display: flex;
-  gap: 1.5rem;
-}
-
-nav a {
-  text-decoration: none;
-  font-weight: 500;
-  color: #333;
-}
-
-body.dark nav a {
-  color: #f5f5f5;
-}
-
-/* Dark mode toggle */
-#dark-toggle {
-  background: transparent;
-  border: none;
-  font-size: 1.4rem;
-  cursor: pointer;
-  color: inherit;
-}
-
-/* Hero Section */
-.hero {
-  height: 80vh;
-  background: url("images/dashboard-bg.jpg") center/cover no-repeat;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 2rem;
-}
-
-.hero h1 {
-  font-size: 4rem;
-  font-family: 'Pacifico', cursive;
-  margin-bottom: 1rem;
-  color: #000;
-}
-
-.hero p {
-  font-size: 1.2rem;
-  max-width: 600px;
-  color: #222;
-}
-
-body.dark .hero h1,
-body.dark .hero p {
-  color: #f5f5f5;
+  background-color: #333;
+  color: #f0f0f0;
 }
 
 /* Certifications Section */
-.certifications {
-  padding: 4rem 2rem;
-}
-
-.certifications h2 {
-  text-align: center;
-  font-size: 2.2rem;
-  margin-bottom: 2rem;
-}
-
-.cert-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-}
-
-.cert-card {
-  background-color: #fff;
-  padding: 1.5rem;
-  border-radius: 10px;
-  text-align: center;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s ease;
-}
-
-body.dark .cert-card {
-  background-color: #1f1f1f;
-}
-
-.cert-card:hover {
-  transform: translateY(-5px);
-}
-
-.cert-card img {
-  height: 60px;
-  width: auto;
-  object-fit: contain;
-  margin-bottom: 1rem;
-}
-
-.cert-card h3 {
-  font-size: 1.1rem;
-  margin-bottom: 0.3rem;
-  color: #111;
-}
-
-.cert-card p {
-  font-size: 0.95rem;
-  color: #555;
-}
-
-body.dark .cert-card h3 {
-  color: #f5f5f5;
-}
-
-body.dark .cert-card p {
-  color: #ccc;
-}
-
-.cert-card a {
-  display: inline-block;
-  margin-top: 0.8rem;
-  padding: 0.4rem 0.8rem;
-  background-color: black;
-  color: white;
-  border-radius: 4px;
-  font-size: 0.9rem;
-  text-decoration: none;
-}
-
-.cert-card a:hover {
-  background-color: #444;
-}
-
-/* Contact Section */
-footer {
-  padding: 3rem 2rem;
-  text-align: center;
-}
-
-footer h2 {
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
-}
-
-.social-icons {
+#certifications .project-grid {
   display: flex;
-  justify-content: center;
-  gap: 2.5rem;
-  margin-top: 1rem;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 30px;
 }
 
-.social-icons a {
-  font-size: 2.2rem;
+.project-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 20px;
+  width: 280px;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.project-card img {
+  max-width: 80px;
+  margin-bottom: 15px;
+}
+
+.project-card h3 {
+  font-size: 1.1rem;
   color: #333;
 }
 
-body.dark .social-icons a {
-  color: #f5f5f5;
+.project-card p {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.project-card .btn {
+  display: inline-block;
+  background-color: #3498db;
+  color: #fff;
+  padding: 8px 16px;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.project-card .btn:hover {
+  background-color: #2980b9;
+}
+
+/* Dark Mode Specific Styles */
+body.dark .project-card {
+  background-color: #444;
+  color: #fff;
+}
+
+body.dark .project-card .btn {
+  background-color: #2980b9;
+}
+
+body.dark .project-card .btn:hover {
+  background-color: #3498db;
+}
+
+/* Dark Mode Icon */
+body.dark header .nav a {
+  color: #fff;
+}
+
+body.dark .hero {
+  background-color: #444;
+  color: #fff;
+}
+
+body.dark .footer {
+  background-color: #222;
 }
