@@ -35,6 +35,18 @@ header {
   transition: background-color 0.3s ease;
 }
 
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #fff;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+}
 header.scrolled {
   background-color: #333;
 }
@@ -87,6 +99,15 @@ nav button {
   margin-top: 10px;
 }
 
+.hero {
+  padding-top: 80px; /* Adjust if needed */
+}
+.header .logo {
+  flex-grow: 1;
+  font-size: 22px;
+  font-weight: bold;
+  color: inherit;
+}
 /* Certifications Section */
 #certifications {
   padding: 100px 20px 50px;
@@ -163,7 +184,11 @@ body.dark .project-card {
 header.scrolled {
   padding: 10px 0;
 }
-
+header.scrolled a,
+header.scrolled .logo,
+header.scrolled i {
+  color: #fff !important;
+}
 /* Adjustments for Mobile */
 @media screen and (max-width: 768px) {
   .project-grid {
@@ -189,8 +214,25 @@ header.scrolled {
   }
 
   nav a {
-    padding: 8px;
-  }
+  text-decoration: none;
+  color: inherit;
+  padding: 8px 12px;
+  margin: 0 8px;
+  transition: color 0.3s ease;
+}
+
+  body.dark nav a {
+  color: #f4f4f4;
+}
+  nav button i {
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+body.dark nav button i {
+  color: #f4f4f4;
+}
+
 
   .project-grid {
     grid-template-columns: 1fr;
