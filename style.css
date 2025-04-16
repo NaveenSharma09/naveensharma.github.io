@@ -1,4 +1,4 @@
-/* General resets and base styles */
+/* Base and Reset */
 * {
   margin: 0;
   padding: 0;
@@ -22,26 +22,32 @@ img {
   border-radius: 8px;
 }
 
-/* Header styles */
+/* Header */
 .header {
-  position: fixed;
-  width: 100%;
-  top: 0;
-  left: 0;
   background-color: #111;
   color: #fff;
   padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   z-index: 999;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s ease-in-out;
 }
+
+.header .logo {
+  font-size: 1.5rem;
+}
+
 .nav a {
   margin-left: 1.5rem;
   color: #fff;
   font-weight: 500;
 }
+
 #dark-toggle {
   margin-left: 1rem;
   cursor: pointer;
@@ -51,40 +57,48 @@ img {
   color: #fff;
 }
 
-/* Hero section */
+.header.sticky {
+  background-color: #333;
+}
+
+/* Hero Section */
 .hero {
   background: url('images/dashboard-bg.jpg') center center/cover no-repeat;
   color: #fff;
   text-align: center;
   padding: 6rem 2rem;
 }
-.hero-content h1 {
-  font-size: 3.5rem;
+
+.hero .hello {
   font-family: 'Pacifico', cursive;
-  margin-bottom: 0.5rem;
-}
-.hero-content p {
-  font-size: 1.2rem;
-  max-width: 600px;
-  margin: auto;
+  font-size: 4rem;
 }
 
-/* Project grid and cards */
+.hero .tagline {
+  font-size: 1.5rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Projects */
 .projects {
   padding: 4rem 2rem;
   background-color: #f9f9f9;
   text-align: center;
 }
+
 .projects h2 {
   font-size: 2rem;
   margin-bottom: 2rem;
 }
+
 .project-grid {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 2rem;
 }
+
 .project-card {
   background: #fff;
   border-radius: 12px;
@@ -92,57 +106,95 @@ img {
   max-width: 300px;
   padding: 1rem;
 }
+
+.project-card img {
+  max-width: 100%;
+  height: auto;
+}
+
 .project-card h3 {
   margin-top: 1rem;
 }
 
-/* Footer section */
+.project-card p {
+  font-size: 1rem;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #111;
+  color: #fff;
+  border-radius: 8px;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background-color: #333;
+}
+
+/* Footer */
 .footer {
   background: #fff;
   text-align: center;
   padding: 2rem;
   border-top: 1px solid #ccc;
 }
-.footer h3 {
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
+
+.footer .social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  font-size: 2rem;
 }
 
-/* Dark Mode styles */
+.footer .social-icons i {
+  transition: transform 0.3s ease;
+}
+
+.footer .social-icons i:hover {
+  transform: scale(1.2);
+}
+
+/* Dark Mode */
 body.dark {
   background-color: #111;
   color: #eee;
 }
+
 body.dark .header {
+  background-color: #000;
+}
+
+body.dark .hero {
+  background: url('images/dashboard-bg-dark.jpg') center center/cover no-repeat;
+}
+
+body.dark .projects {
   background-color: #222;
 }
-body.dark .hero {
-  color: #eee;
-}
+
 body.dark .project-card {
-  background: #333;
-  color: #fff;
-}
-body.dark .footer {
   background-color: #333;
   color: #eee;
 }
 
-/* Certifications Section */
-.project-card a {
-  display: block;
-  margin-top: 1rem;
-  padding: 0.5rem;
-  background-color: #0078d4;
-  color: white;
-  text-align: center;
-  border-radius: 4px;
+body.dark .footer {
+  background-color: #111;
+  border-top-color: #444;
 }
 
-.project-card img {
-  height: 60px;
-  width: auto;
-  object-fit: contain;
-  margin-bottom: 1rem;
+body.dark .btn {
+  background-color: #eee;
+  color: #111;
 }
 
+body.dark .btn:hover {
+  background-color: #ccc;
+}
+
+/* Light Mode Fixes */
+body.light .hero {
+  color: #111;
+}
