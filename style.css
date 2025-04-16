@@ -1,222 +1,173 @@
-/* General Styling */
+/* General Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, sans-serif;
 }
 
+/* Fonts */
 body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
   background-color: #fff;
-  color: #000;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  color: #333;
+  transition: background-color 0.3s, color 0.3s;
 }
 
-.dark {
+body.dark {
   background-color: #121212;
-  color: #fff;
+  color: #f5f5f5;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  margin: 0;
-  font-weight: normal;
-}
-
-/* Header Styling */
+/* Header */
 .header {
-  background-color: #333;
-  color: white;
-  padding: 1rem;
-  position: fixed;
-  width: 100%;
+  position: sticky;
   top: 0;
-  left: 0;
-  z-index: 10;
-  transition: background-color 0.3s ease;
+  z-index: 1000;
+  background: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background 0.3s;
 }
 
-.header .logo {
-  font-size: 1.8rem;
+.header.scrolled {
+  background-color: #f0f0f0;
+}
+
+.logo {
   font-weight: bold;
+  font-size: 1.5rem;
+}
+
+/* Navigation */
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
 }
 
 .nav a {
-  margin: 0 15px;
-  color: white;
   text-decoration: none;
-  font-size: 1.1rem;
-  text-transform: uppercase;
+  color: #333;
+  font-weight: 500;
 }
 
-.nav button {
-  background: none;
+body.dark .nav a {
+  color: #f5f5f5;
+}
+
+#dark-toggle {
+  font-size: 1.2rem;
+  background: transparent;
   border: none;
-  color: white;
-  font-size: 1.5rem;
   cursor: pointer;
-  margin-left: 20px;
 }
 
 /* Hero Section */
 .hero {
-  margin-top: 80px;
-  padding: 3rem 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
   text-align: center;
-  background: url('images/hero-bg.jpg') no-repeat center center/cover;
-  color: white;
+  background: url('images/dashboard-bg.jpg') center/cover no-repeat;
+  padding: 2rem;
 }
 
-.hero .hello {
-  font-size: 3rem;
-  font-family: 'Pacifico', sans-serif;
+.hero-content h1 {
+  font-family: 'Pacifico', cursive;
+  font-size: 4rem;
+  margin-bottom: 1rem;
 }
 
-.hero .tagline {
-  font-size: 1.4rem;
-  margin-top: 20px;
+.hero-content p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.5;
 }
 
-/* Projects Section */
+/* Projects & Certifications */
 .projects {
-  padding: 3rem 1.5rem;
-  text-align: center;
-}
-
-.projects h2 {
-  margin-bottom: 2rem;
-  font-size: 2rem;
+  padding: 4rem 2rem;
 }
 
 .project-grid {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
 }
 
 .project-card {
-  background: #f5f5f5;
-  padding: 1.5rem;
-  width: 250px;
-  text-align: center;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 1rem;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-  transition: transform 0.3s ease;
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+body.dark .project-card {
+  background-color: #1e1e1e;
 }
 
 .project-card img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 8px;
-}
-
-.project-card:hover {
-  transform: scale(1.05);
+  max-width: 100px;
+  max-height: 100px;
+  object-fit: contain;
+  margin-bottom: 1rem;
 }
 
 .project-card h3 {
-  margin-top: 10px;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
 }
 
 .project-card p {
-  font-size: 1rem;
-  margin-top: 8px;
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
 }
 
-/* Certifications Section */
-#certifications .project-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 20px;
-  justify-items: center;
-}
-
-#certifications .project-card {
-  background-color: #fafafa;
-  padding: 1.5rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-}
-
-#certifications .project-card img {
-  max-width: 150px;
-  height: auto;
-  object-fit: contain;
-  margin-bottom: 10px;
-}
-
-#certifications .project-card h3 {
-  margin-top: 10px;
-  font-size: 1.2rem;
-}
-
-#certifications .project-card p {
-  font-size: 1rem;
-  margin-top: 8px;
-}
-
-#certifications .btn {
-  margin-top: 10px;
-  padding: 10px 20px;
-  text-decoration: none;
-  background-color: #007bff;
+.btn {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  background: black;
   color: white;
+  text-decoration: none;
   border-radius: 5px;
   font-weight: bold;
-  transition: background-color 0.3s ease;
+  transition: background 0.3s;
 }
 
-#certifications .btn:hover {
-  background-color: #0056b3;
+.btn:hover {
+  background: #333;
 }
 
-/* Get in Touch Section */
+/* Footer */
 .footer {
-  background-color: #333;
-  color: white;
-  padding: 3rem 1.5rem;
+  padding: 2rem;
   text-align: center;
 }
 
-.footer .social-icons {
-  margin-top: 20px;
+.footer h3 {
+  margin-bottom: 1rem;
 }
 
-.footer .social-icons a {
-  margin: 0 15px;
-  font-size: 2rem;
-  color: white;
-  text-decoration: none;
-  transition: color 0.3s ease;
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 1rem;
 }
 
-.footer .social-icons a:hover {
-  color: #007bff;
+.social-icons a {
+  font-size: 1.8rem;
+  color: #333;
 }
 
-/* Dark Mode Toggle */
-.dark-toggle {
-  background: none;
-  border: none;
-  color: white;
-  font-size: 1.5rem;
-  cursor: pointer;
-}
-
-/* Sticky Header on Scroll */
-header {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-
-/* Header Color Change on Scroll */
-.header.scrolled {
-  background-color: #444;
-}
-
-/* Transition for Elements */
-.transition {
-  transition: all 0.3s ease;
+body.dark .social-icons a {
+  color: #f5f5f5;
 }
