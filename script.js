@@ -19,7 +19,7 @@ toggle.addEventListener('click', () => {
 updateToggleIcon();
 
 // Header scroll effect
-const header = document.getElementById('main-header');
+const header = document.getElementById('main-header'); // Ensure your header has id="main-header"
 
 // Add scroll event listener to change header style when scrolling
 window.addEventListener('scroll', () => {
