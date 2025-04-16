@@ -1,6 +1,7 @@
 // Dark Mode Toggle
 const toggle = document.getElementById('dark-toggle');
 const toggleIcon = document.getElementById('toggle-icon');
+
 toggle.addEventListener('click', () => {
   document.body.classList.toggle('dark');
   // Toggle moon/sun icon
@@ -13,9 +14,12 @@ toggle.addEventListener('click', () => {
   }
 });
 
-// Header color change on scroll
-const header = document.getElementById('main-header');
+// Sticky Header on Scroll
 window.addEventListener('scroll', () => {
-  if (window.scrollY > 0) {
-    header.classList.add('sticky');
+  const header = document.querySelector('header');
+  if (window.scrollY > 50) {
+    header.classList.add('scrolled');
+  } else {
+    header.classList.remove('scrolled');
   }
+});
