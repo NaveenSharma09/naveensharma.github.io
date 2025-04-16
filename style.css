@@ -28,6 +28,14 @@ img {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  transition: background 0.3s ease;
+}
+.header.scrolled {
+  background-color: #333;
 }
 .nav a {
   margin-left: 1.5rem;
@@ -49,10 +57,12 @@ img {
   color: #fff;
   text-align: center;
   padding: 6rem 2rem;
+  margin-top: 4rem; /* To ensure header does not overlap */
 }
 .hero-content h1 {
-  font-size: 2.8rem;
-  margin-bottom: 0.5rem;
+  font-size: 3rem;
+  font-family: 'Pacifico', sans-serif;
+  margin-bottom: 1rem;
 }
 .hero-content p {
   font-size: 1.2rem;
@@ -109,10 +119,11 @@ img {
   font-size: 2rem;
   margin-bottom: 2rem;
 }
-.certification-grid {
+.certification-list {
+  list-style-type: none;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   gap: 2rem;
 }
 .certification-card {
@@ -121,17 +132,14 @@ img {
   box-shadow: 0 4px 10px rgba(0,0,0,0.05);
   max-width: 300px;
   padding: 1rem;
-}
-.certification-card img {
-  max-width: 100px;
-  margin-bottom: 1rem;
+  text-align: center;
 }
 .certification-card h3 {
   margin-top: 1rem;
 }
-.certification-card p {
-  font-size: 1rem;
-  color: #555;
+.certification-card .logo-img {
+  max-width: 120px;
+  margin-bottom: 1rem;
 }
 .certification-card .btn {
   margin-top: 1rem;
