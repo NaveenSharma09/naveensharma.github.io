@@ -18,53 +18,77 @@ body.dark {
   color: #f4f4f4;
 }
 
-.dark .header,
-.dark .footer {
+body.dark .header,
+body.dark .footer {
   background-color: #333;
 }
 
-/* Header Styles */
-header {
-  background-color: #fff;
-  padding: 15px 0;
-  position: fixed;
-  width: 100%;
-  top: 0;
-  left: 0;
-  z-index: 100;
-  transition: background-color 0.3s ease;
+body.dark .nav a,
+body.dark nav a,
+body.dark nav button i {
+  color: #f4f4f4;
 }
 
+body.dark .hero h1,
+body.dark .hero p,
+body.dark .project-card,
+body.dark .project-card p {
+  color: #f4f4f4;
+  background-color: #2c2c2c;
+}
+
+/* Header */
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
   background-color: #fff;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.nav {
-  display: flex;
-  align-items: center;
-}
-header.scrolled {
-  background-color: #333;
-}
-
-header .logo {
-  font-size: 24px;
+.header .logo {
+  flex-grow: 1;
+  font-size: 22px;
   font-weight: bold;
-  text-align: left;
+  color: inherit;
   padding-left: 20px;
 }
 
+/* Header Scroll Behavior */
+header.scrolled {
+  background-color: #333;
+  padding: 10px 0;
+}
+
+header.scrolled a,
+header.scrolled .logo,
+header.scrolled i {
+  color: #fff !important;
+}
+
+/* Navigation */
+.nav {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.nav a,
 nav a {
   text-decoration: none;
   color: #333;
+  font-weight: 500;
   padding: 10px;
   margin-right: 20px;
+  transition: color 0.3s ease;
 }
 
+.nav a:hover,
 nav a:hover {
   color: #007BFF;
 }
@@ -80,7 +104,9 @@ nav button {
 .hero {
   background: url('your-background-image.jpg') no-repeat center center/cover;
   height: 100vh;
+  padding-top: 100px;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
@@ -89,25 +115,16 @@ nav button {
 .hero h1 {
   font-family: 'Pacifico', cursive;
   font-size: 4rem;
-  color: #fff;
+  color: #000;
   margin: 0;
 }
 
 .hero p {
   font-size: 1.2rem;
-  color: #fff;
+  color: #333;
   margin-top: 10px;
 }
 
-.hero {
-  padding-top: 80px; /* Adjust if needed */
-}
-.header .logo {
-  flex-grow: 1;
-  font-size: 22px;
-  font-weight: bold;
-  color: inherit;
-}
 /* Certifications Section */
 #certifications {
   padding: 100px 20px 50px;
@@ -125,6 +142,7 @@ nav button {
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
 }
 
 .project-card img {
@@ -151,6 +169,7 @@ nav button {
   color: white;
   text-decoration: none;
   border-radius: 5px;
+  transition: background-color 0.3s ease;
 }
 
 .project-card .btn:hover {
@@ -168,28 +187,24 @@ nav button {
   margin: 0 10px;
   font-size: 1.5rem;
   color: #333;
+  transition: color 0.3s ease;
 }
 
 .social-icons a:hover {
   color: #007BFF;
 }
 
-/* Dark Mode Styles for Certifications */
-body.dark .project-card {
-  background-color: #2c2c2c;
-  color: #f4f4f4;
+/* Dark Toggle Icon */
+#dark-toggle i {
+  color: #000;
+  transition: color 0.3s ease;
 }
 
-/* Adjust the header size when scrolling */
-header.scrolled {
-  padding: 10px 0;
+body.dark #dark-toggle i {
+  color: #fff;
 }
-header.scrolled a,
-header.scrolled .logo,
-header.scrolled i {
-  color: #fff !important;
-}
-/* Adjustments for Mobile */
+
+/* Responsive Design */
 @media screen and (max-width: 768px) {
   .project-grid {
     grid-template-columns: 1fr 1fr;
@@ -205,6 +220,10 @@ header.scrolled i {
 }
 
 @media screen and (max-width: 480px) {
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+
   .hero h1 {
     font-size: 2rem;
   }
@@ -214,27 +233,16 @@ header.scrolled i {
   }
 
   nav a {
-  text-decoration: none;
-  color: inherit;
-  padding: 8px 12px;
-  margin: 0 8px;
-  transition: color 0.3s ease;
-}
+    padding: 8px 12px;
+    margin: 0 8px;
+    color: inherit;
+  }
 
-  body.dark nav a {
-  color: #f4f4f4;
-}
   nav button i {
-  color: #333;
-  transition: color 0.3s ease;
-}
+    color: #333;
+  }
 
-body.dark nav button i {
-  color: #f4f4f4;
-}
-
-
-  .project-grid {
-    grid-template-columns: 1fr;
+  body.dark nav button i {
+    color: #f4f4f4;
   }
 }
