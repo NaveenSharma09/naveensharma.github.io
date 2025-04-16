@@ -1,34 +1,21 @@
-const toggleButton = document.getElementById('dark-toggle');
-const body = document.body;
-let isDarkMode = false;
-
-// Check for dark mode preference in localStorage or default to light mode
-if (localStorage.getItem('dark-mode') === 'true') {
-  body.classList.add('dark');
-  toggleButton.textContent = '🌞'; // Change to sun icon
-  isDarkMode = true;
-}
-
-toggleButton.addEventListener('click', () => {
-  if (isDarkMode) {
-    body.classList.remove('dark');
-    localStorage.setItem('dark-mode', 'false');
-    toggleButton.textContent = '🌙'; // Change to moon icon
-    isDarkMode = false;
+// Dark Mode Toggle
+const toggle = document.getElementById('dark-toggle');
+const toggleIcon = document.getElementById('toggle-icon');
+toggle.addEventListener('click', () => {
+  document.body.classList.toggle('dark');
+  // Toggle moon/sun icon
+  if (document.body.classList.contains('dark')) {
+    toggleIcon.classList.remove('fa-moon');
+    toggleIcon.classList.add('fa-sun');
   } else {
-    body.classList.add('dark');
-    localStorage.setItem('dark-mode', 'true');
-    toggleButton.textContent = '🌞'; // Change to sun icon
-    isDarkMode = true;
+    toggleIcon.classList.remove('fa-sun');
+    toggleIcon.classList.add('fa-moon');
   }
 });
 
-// Fix header color change on scroll
+// Header color change on scroll
+const header = document.getElementById('main-header');
 window.addEventListener('scroll', () => {
-  const header = document.getElementById('main-header');
-  if (window.scrollY > 50) {
-    header.style.backgroundColor = '#222';
-  } else {
-    header.style.backgroundColor = '#111';
+  if (window.scrollY > 0) {
+    header.classList.add('sticky');
   }
-});
