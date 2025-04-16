@@ -4,7 +4,8 @@ body {
   margin: 0;
   padding: 0;
   background-color: #fff;
-  transition: background-color 0.3s ease;
+  color: #333;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 body.dark {
@@ -21,7 +22,7 @@ header {
   padding: 10px 20px;
   z-index: 1000;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 header.scrolled {
@@ -29,8 +30,72 @@ header.scrolled {
   color: #f0f0f0;
 }
 
+header .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+header .nav {
+  float: right;
+  display: flex;
+  align-items: center;
+}
+
+header .nav a {
+  color: #333;
+  margin: 0 15px;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+header .nav a:hover {
+  color: #3498db;
+}
+
+header .nav button {
+  background: none;
+  border: none;
+  color: inherit;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+header .nav button:hover {
+  color: #3498db;
+}
+
+/* Hero Section */
+.hero {
+  background-color: #f4f4f4;
+  padding: 100px 0;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: #666;
+}
+
 /* Certifications Section */
-#certifications .project-grid {
+#certifications {
+  padding: 60px 20px;
+  background-color: #fff;
+}
+
+#certifications h2 {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.project-grid {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -45,6 +110,7 @@ header.scrolled {
   text-align: center;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .project-card img {
@@ -70,6 +136,7 @@ header.scrolled {
   text-decoration: none;
   border-radius: 4px;
   font-weight: bold;
+  transition: background-color 0.3s ease;
 }
 
 .project-card .btn:hover {
@@ -90,9 +157,12 @@ body.dark .project-card .btn:hover {
   background-color: #3498db;
 }
 
-/* Dark Mode Icon */
 body.dark header .nav a {
   color: #fff;
+}
+
+body.dark header .nav a:hover {
+  color: #2980b9;
 }
 
 body.dark .hero {
@@ -102,4 +172,71 @@ body.dark .hero {
 
 body.dark .footer {
   background-color: #222;
+  color: #fff;
 }
+
+/* Footer */
+.footer {
+  background-color: #f4f4f4;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.footer .social-icons a {
+  color: #333;
+  margin: 0 15px;
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.footer .social-icons a:hover {
+  color: #3498db;
+}
+
+/* Scroll Effect for Header */
+header.scrolled {
+  background-color: #333;
+  color: #f0f0f0;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  header .nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .project-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .project-card {
+    width: 100%;
+    max-width: 350px;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 1.5rem;
+  }
+
+  .hero p {
+    font-size: 0.9rem;
+  }
+
+  .project-card {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
